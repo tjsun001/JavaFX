@@ -23,8 +23,8 @@ public class MainTest extends Application implements EventHandler<ActionEvent>{
 	/**
 	 * @param args
 	 */
-	Button btnStart;
-	Button btnExit;
+	Button btnStartTest;
+	Button btnExitTest;
 	Scene scene;
 	Stage primaryStage;
 	int dialogReturnValue;
@@ -39,21 +39,21 @@ public class MainTest extends Application implements EventHandler<ActionEvent>{
 		primaryStage.setTitle("Offline Installer");
 		this.primaryStage = primaryStage;
 		
-		btnStart = new Button();
-		btnStart.setText("Start");
-		btnStart.setLayoutY(100);
-		btnStart.setLayoutX(10);
-		btnStart.setOnAction(this);
+		btnStartTest = new Button();
+		btnStartTest.setText("Start");
+		btnStartTest.setLayoutY(100);
+		btnStartTest.setLayoutX(10);
+		btnStartTest.setOnAction(this);
 			
-		btnExit = new Button();
-		btnExit.setText("Exit");
-		btnExit.setLayoutX(200);
-		btnExit.setLayoutY(100);
-		btnExit.setOnAction(this);
+		btnExitTest = new Button();
+		btnExitTest.setText("Exit");
+		btnExitTest.setLayoutX(200);
+		btnExitTest.setLayoutY(100);
+		btnExitTest.setOnAction(this);
 		
 		Pane layout = new Pane();
-		layout.getChildren().add(btnStart);
-		layout.getChildren().add(btnExit);
+		layout.getChildren().add(btnStartTest);
+		layout.getChildren().add(btnExitTest);
 		
 		scene = new Scene(layout,400,200);
 		primaryStage.setScene(scene);
@@ -68,14 +68,14 @@ public class MainTest extends Application implements EventHandler<ActionEvent>{
 		switch (whichButton) {
 		case "Start":
 			
-			btnStart = new BtnStart(event);
+			btnStartTest = new BtnStartTest(event);
 		
 			break;
 			
 		case "Exit":
 			logger.info("Exit button was clicked");
 			
-			btnExit = new BtnExit(event,primaryStage);
+			btnExitTest = new BtnExitTest(event,primaryStage);
 			break;
 		}
 

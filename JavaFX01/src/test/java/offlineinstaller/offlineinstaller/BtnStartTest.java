@@ -26,7 +26,10 @@ public class BtnStartTest extends Button implements EventHandler<ActionEvent> {
 				Runtime runtime = Runtime.getRuntime();
 				try {
 					path = PropertiesLoaderTest.getInstallerPath();
-					runtime.exec(new String[] {path}); 
+					path = "cmd /c start cmd.exe /K dir && ping";
+					path = "cmd /c start cmd.exe /K \"dir && cd /d d:cmd && dir && doUpdate.cmd\""; 
+					 Runtime.getRuntime().exec(path);
+//					runtime.exec(new String[] {path}); 
 				} catch (IOException e) {
 					e.printStackTrace();
 				}

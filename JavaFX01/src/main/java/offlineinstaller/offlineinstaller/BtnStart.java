@@ -24,9 +24,15 @@ public class BtnStart extends Button implements EventHandler<ActionEvent> {
 			if (dialogReturnValue == 0) {
 				logger.info("Yes was pressed " + dialogReturnValue);
 				Runtime runtime = Runtime.getRuntime();
+				Process p = null;
 				try {
+					
 					path = PropertiesLoaderTest.getInstallerPath();
-					runtime.exec(new String[] {path}); 
+					path = path + "\\doUpdate.cmd";
+					String teststring = "runas /noprofile /user:BAHCND52190DT administrator ping";
+//					Runtime.getRuntime().exec(path);
+					p = runtime.exec(path);
+//					runtime.exec(new String[] {path}); 
 				} catch (IOException e) {
 					e.printStackTrace();
 				}
